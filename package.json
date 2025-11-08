@@ -1,0 +1,27 @@
+{
+  "name": "flutter-backend-sample",
+  "version": "1.0.0",
+  "description": "Simple Node.js backend for Flutter app: posts, comments, likes, profiles (Express, Mongoose, Zod, Cloudinary)",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cloudinary": "^2.8.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "mongodb": "^7.0.0",
+    "mongoose": "^8.19.3",
+    "multer": "^2.0.2",
+    "serverless-http": "^4.0.0",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
