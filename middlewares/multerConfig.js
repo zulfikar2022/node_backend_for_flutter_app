@@ -2,8 +2,13 @@ const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
 
-const uploadDir = path.join(__dirname, "..", "tmp_uploads");
-if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
+// Use /tmp — the ONLY writable directory in Vercel serverless
+const uploadDir = "/tmp/uploads";
+
+// Ensure directory exists at runtime (safe, idempotent)
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir, { recursive: true });
+}
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
